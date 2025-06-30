@@ -531,8 +531,7 @@
         }
 
         function showStudentManagement() {
-           
-                    <!-- Students Management View -->
+           <!-- Students Management View -->
                     <div id="studentsView" class="view-content hidden">
                         <div class="flex justify-between items-center mb-6">
                             <h2 class="text-3xl font-bold">Students Management - <span id="studentsSection">Pre-Primary</span></h2>
@@ -639,42 +638,7 @@
                                     </button>
                                 </form>
                             </div>
-                            
-                            <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
-                                <h3 class="text-lg font-semibold mb-4 text-blue-600">📊 Student Statistics</h3>
-                                <div class="space-y-3">
-                                    <div class="flex justify-between items-center">
-                                        <span>Total Students:</span>
-                                        <span class="font-bold text-lg text-primary">${appData.students.length}</span>
-                                    </div>
-                                    ${appData.settings.grades.map(grade => {
-                                        const count = appData.students.filter(s => s.grade === grade).length;
-                                        const percentage = appData.students.length > 0 ? ((count / appData.students.length) * 100).toFixed(1) : 0;
-                                        return `
-                                            <div class="flex justify-between items-center">
-                                                <span>Grade ${grade}:</span>
-                                                <div class="flex items-center space-x-2">
-                                                    <span class="font-semibold">${count}</span>
-                                                    <span class="text-sm text-gray-500">(${percentage}%)</span>
-                                                </div>
-                                            </div>
-                                        `;
-                                    }).join('')}
-                                    
-                                    <div class="pt-3 border-t dark:border-gray-600">
-                                        <div class="flex justify-between items-center">
-                                            <span>Male Students:</span>
-                                            <span class="font-semibold">${appData.students.filter(s => s.gender === 'Male').length}</span>
-                                        </div>
-                                        <div class="flex justify-between items-center">
-                                            <span>Female Students:</span>
-                                            <span class="font-semibold">${appData.students.filter(s => s.gender === 'Female').length}</span>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
-                    </div>
                     
                     <!-- Student List -->
                     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
